@@ -1,0 +1,77 @@
+/**
+ * MyLiveLibrary styles.
+ *
+ * Import in your app's CSS:
+ *   @import "my_live_library/css";
+ *
+ * All classes are namespaced under .my-live-library-- to avoid collisions.
+ * Override variables or classes freely in your own stylesheet.
+ */
+
+/* ----------------------------------------
+   CSS custom properties (design tokens)
+   ---------------------------------------- */
+:root {
+  --mll-color-primary: #6366f1;
+  --mll-color-primary-hover: #4f46e5;
+  --mll-color-surface: #ffffff;
+  --mll-color-border: #e5e7eb;
+  --mll-color-text: #111827;
+  --mll-color-text-muted: #6b7280;
+
+  --mll-radius: 0.5rem;
+  --mll-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --mll-font-sans: ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ----------------------------------------
+   MyWidget component
+   ---------------------------------------- */
+.my-live-library--widget {
+  font-family: var(--mll-font-sans);
+  background: var(--mll-color-surface);
+  border: 1px solid var(--mll-color-border);
+  border-radius: var(--mll-radius);
+  box-shadow: var(--mll-shadow);
+  max-width: 24rem;
+  overflow: hidden;
+}
+
+.my-live-library--widget__header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--mll-color-border);
+}
+
+.my-live-library--widget__header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mll-color-text);
+}
+
+.my-live-library--widget__body {
+  padding: 1rem;
+  color: var(--mll-color-text);
+}
+
+.my-live-library--widget__controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.my-live-library--widget__controls button {
+  padding: 0.375rem 0.875rem;
+  background: var(--mll-color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--mll-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.my-live-library--widget__controls button:hover {
+  background: var(--mll-color-primary-hover);
+}

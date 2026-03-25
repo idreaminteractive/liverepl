@@ -1,0 +1,19 @@
+{
+  "name": "liverepl",
+  "version": "0.1.0",
+  "description": "JS hooks and CSS for liverepl",
+  "main": "assets/js/index.js",
+  "exports": {
+    ".": "./assets/js/index.js",
+    "./css": "./assets/css/style.css"
+  },
+  "files": [
+    "assets"
+  ],
+  "peerDependencies": {
+    "phoenix": "*",
+    "phoenix_html": "*",
+    "phoenix_live_view": "*"
+  },
+  "devDependencies": {}
+}
