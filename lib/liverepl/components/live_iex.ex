@@ -47,7 +47,7 @@ defmodule Liverepl.Components.Liveiex do
     <div
       id={@id}
       class={["my-live-library--widget", @class]}
-      phx-hook="MyWidgetHook"
+      phx-hook="LivereplHook"
       phx-target={@myself}
     >
       <div class="my-live-library--widget__header">
