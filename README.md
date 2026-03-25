@@ -9,9 +9,9 @@
 ```elixir
 def deps do
   [
-    {:my_live_library, "~> 0.1"}
+    {:liverepl, "~> 0.1"}
     # or during local dev:
-    # {:my_live_library, path: "../my_live_library"}
+    # {:liverepl, path: "../liverepl"}
   ]
 end
 ```
@@ -23,7 +23,7 @@ Run `mix deps.get`.
 ```json
 {
   "dependencies": {
-    "my_live_library": "file:../deps/my_live_library"
+    "liverepl": "file:../deps/liverepl"
   }
 }
 ```
@@ -33,18 +33,16 @@ Run `npm install --prefix assets` (or `yarn --cwd assets`).
 ### 3. `assets/js/app.js`
 
 ```js
-import { MyLibraryHooks } from "my_live_library"
+import { LiveReplHooks } from "liverepl"
 
 let liveSocket = new LiveSocket("/live", Socket, {
-  hooks: { ...MyLibraryHooks },
+  hooks: { LiveReplHooks: LiveReplHooks.LiveReplHook },
 })
 ```
 
-### 4. `assets/css/app.css`
+### 4
 
-```css
-@import "my_live_library/css";
-```
+Install @xterm - just do it.
 
 ### 5. Use a component
 
@@ -52,30 +50,13 @@ let liveSocket = new LiveSocket("/live", Socket, {
 # In any LiveView render/1:
 ~H"""
 <.live_component
-  module={MyLiveLibrary.Components.MyWidget}
+  module={Liverepl.Components.LiveIex}
   id="my-widget"
-  title="Hello"
 />
 """
 ```
 
----
+Never make this public. Always route it behind basic auth and /dev/ routes
 
-## Development
-
-```bash
-mix deps.get
-mix test
-```
-
-To test against a local Phoenix app, use `path:` in that app's `mix.exs`:
-
-```elixir
-{:my_live_library, path: "../my_live_library"}
-```
-
----
-
-## License
-
-MIT
+Credit: Updated and used from <https://github.com/frerich/underthehood>
+I simply updated it to work with current Phoenix and setup for me.

@@ -1,20 +1,4 @@
 defmodule Liverepl.Components.LiveIex do
-  @moduledoc """
-
-  ## Assigns
-
-    * `:id` - required, unique identifier for this component instance
-    * `:title` - the widget title (default: "My Widget")
-    * `:class` - additional CSS classes (optional)
-
-  ## Example
-
-      <.live_component
-        module={MyLiveLibrary.Components.MyWidget}
-        id="my-widget"
-        title="Hello world"
-      />
-  """
   use Phoenix.LiveComponent
 
   @impl true
