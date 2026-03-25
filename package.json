@@ -12,6 +12,7 @@
   ],
   "peerDependencies": {
     "phoenix": "*",
+    "@xterm/xterm": "*",
     "phoenix_html": "*",
     "phoenix_live_view": "*"
   },

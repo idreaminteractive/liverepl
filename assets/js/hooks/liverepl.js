@@ -2,10 +2,19 @@
  * LivereplHook
  *
  */
+import { Terminal } from "@xterm/xterm"
 export const LiveReplHook = {
   mounted() {
     console.log("[LiveReplHook] mounted", this.el);
+    let term = new Terminal();
+    term.open(this.el.querySelector(".xtermjs_container"));
+    term.onKey(key => {
+      this.pushEventTo(this.el, "key", key);
+    });
 
+    this.handleEvent("print_" + this.el.id, e => {
+      term.write(e.data);
+    });
     // Example: listen for a custom server-sent event
     // this.handleEvent("my_widget:flash", ({ message }) => {
     //   console.log("[MyWidgetHook] server says:", message);

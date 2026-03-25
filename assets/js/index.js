@@ -1,6 +1,6 @@
-import { LiveReplHook } from "./hooks/live_repl";
+import { LiveReplHook } from "./hooks/liverepl";
 
 // Add new hooks here as you build them out.
-export const Hooks = {
+export const LiveReplHooks = {
   LiveReplHook,
 };

@@ -26,8 +26,9 @@ defmodule Liverepl.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.7"},
-      {:phoenix_live_view, "~> 0.20"},
+      {:phoenix_live_view, "~> 1.1"},
       {:phoenix_html, "~> 4.0"},
+      {:extty, "~> 0.4"},
 
       # Dev/test only
       {:ex_doc, "~> 0.31", only: :dev, runtime: false}
